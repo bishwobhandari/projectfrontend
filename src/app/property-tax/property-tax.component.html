@@ -1,0 +1,25 @@
+<div class="container">
+    <form #property_tax="ngForm" (ngSubmit)="onSubmit(property_tax)" novalidate>
+      <input name="property_value" [(ngModel)]="property_value.salary" >
+      <button>Submit</button>
+    </form>
+  </div>
+  <div class="container">
+    <table class="table  table-hover table-bordered  table-condensed"  style="width: auto;" >
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Property Tax Rate </th>
+          <th scope="col">Tax Amount </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of property_value_taxed">
+          <td>{{x.state}}</td>
+          <td>{{x.property_tax}} %</td>
+          <td>{{x.tax_amount | currency}}</td>
+          <img>
+        </tr>
+      </tbody>
+    </table>
+  </div>

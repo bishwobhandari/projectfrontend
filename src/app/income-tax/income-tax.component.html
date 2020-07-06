@@ -1,0 +1,25 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <input name="salary" [(ngModel)]="salary.salary" >
+      <button>Submit</button>
+    </form>
+  </div>
+  <div class="container">
+    <table class="table  table-hover table-bordered  table-condensed"  style="width: auto;" >
+      <thead>
+        <tr>
+          <th scope="col">State</th>
+          <th scope="col">Income Tax Rate </th>
+          <th scope="col">Salary </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let x of taxedIncome">
+          <td>{{x.state}}</td>
+          <td>{{x.tax_rate}} %</td>
+          <td>{{x.salary_after_tax | currency}}</td>
+          <img>
+        </tr>
+      </tbody>
+    </table>
+  </div>
